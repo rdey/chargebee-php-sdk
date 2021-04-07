@@ -75,6 +75,22 @@ class PaymentSource extends AbstractApi
      *
      * @return array|string
      */
+    public function createUsingPaymentIntent(array $data, array $headers = [])
+    {
+        $url = $this->url('payment_sources/create_using_payment_intent');
+
+        return $this->post($url, $data, $headers);
+    }
+
+
+    /**
+     * @param array $data
+     * @param array $headers
+     *
+     * @throws Exception
+     *
+     * @return array|string
+     */
     public function createCard(array $data, array $headers = [])
     {
         $url = $this->url('payment_sources/create_card');
