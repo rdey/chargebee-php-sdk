@@ -59,6 +59,23 @@ class Subscription extends AbstractApi
     }
 
     /**
+     * Create a subscription for a customer.
+     *
+     * @param array $data
+     * @param array $headers
+     *
+     * @throws Exception
+     *
+     * @return array|string
+     */
+    public function createForCustomer(string $id, array $data, array $headers = [])
+    {
+        $url = $this->url('customers/%s/subscriptions', $id);
+
+        return $this->post($url, $data, $headers);
+    }
+
+    /**
      * @param string $id
      * @param array  $headers
      *
