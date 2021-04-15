@@ -8,17 +8,18 @@ use NathanDunn\Chargebee\Api\AbstractApi;
 class PromotionalCredit extends AbstractApi
 {
     /**
+     * @param array $data
      * @param array $headers
      *
      * @throws Exception
      *
      * @return array|string
      */
-    public function list(array $headers = [])
+    public function list(array $data = [], array $headers = [])
     {
         $url = $this->url('promotional_credits');
 
-        return $this->get($url, [], $headers);
+        return $this->get($url, $data, $headers);
     }
 
     /**
